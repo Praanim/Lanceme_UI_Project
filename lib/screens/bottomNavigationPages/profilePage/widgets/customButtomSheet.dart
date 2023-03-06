@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:lanceme_ui_project/screens/loginScreen.dart';
+import 'package:lanceme_ui_project/features/auth/screens/loginScreen.dart';
 
 import '../../../../constants/constants.dart';
+import '../../../../features/auth/controller/authController.dart';
 
 class CustomBottomSheet extends StatelessWidget {
-  const CustomBottomSheet({
+  final AuthController _authController = AuthController();
+  CustomBottomSheet({
     super.key,
   });
 
@@ -58,12 +60,9 @@ class CustomBottomSheet extends StatelessWidget {
                   fixedSize: Size(MediaQuery.of(context).size.width, 48),
                   backgroundColor: Constants.errorColor),
               onPressed: () {
-                //logOut from the screen
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginIn(),
-                    ));
+                //perform logOut action
+                Navigator.of(context).pop();
+                _authController.logOut();
               },
               child: const Text(
                 "Logout",

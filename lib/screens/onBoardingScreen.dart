@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lanceme_ui_project/common_widgets/custom_button.dart';
-import 'package:lanceme_ui_project/screens/loginScreen.dart';
+import 'package:lanceme_ui_project/features/auth/screens/loginScreen.dart';
+import 'package:lanceme_ui_project/features/auth/screens/wrapper.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'package:lanceme_ui_project/constants/constants.dart';
-import 'package:lanceme_ui_project/screens/splash_screen.dart';
 
 const _noOfBoardingPages = 4;
 
@@ -122,7 +122,7 @@ class CustomButtomSheet extends StatelessWidget {
                         Navigator.pushAndRemoveUntil(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginIn(),
+                              builder: (context) => Wrapper(),
                             ),
                             (route) => false);
                       },

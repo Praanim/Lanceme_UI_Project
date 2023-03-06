@@ -4,7 +4,10 @@ import 'package:lanceme_ui_project/common_widgets/custom_button.dart';
 import 'package:lanceme_ui_project/common_widgets/custom_textField.dart';
 
 import 'package:lanceme_ui_project/constants/constants.dart';
+import 'package:lanceme_ui_project/features/auth/controller/authController.dart';
 import 'package:lanceme_ui_project/screens/bottomNavigationPages/mainPage.dart';
+
+import '../../../common_widgets/customSnackBar.dart';
 
 class LoginIn extends StatefulWidget {
   const LoginIn({super.key});
@@ -14,9 +17,11 @@ class LoginIn extends StatefulWidget {
 }
 
 class _LoginInState extends State<LoginIn> {
+  final AuthController _authController = AuthController();
   final _emailController = TextEditingController(text: 'janecopper@gmail.com');
   final _passwordController = TextEditingController(text: 'randomText');
   bool isObscured = false;
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -145,10 +150,15 @@ class _LoginInState extends State<LoginIn> {
                   size: size,
                   title: "Login",
                   onPressed: () {
-                    //login featured to be added
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => MainPage(),
-                    ));
+                    //login the user
+
+                    _authController
+                        .signInUser(
+                          _emailController.text.trim(),
+                          _passwordController.text.trim(),
+                        )
+                        .then((message) => customSnackBar(
+                            context, message, Constants.brandMainColor));
                   }),
               const SizedBox(
                 height: 36,

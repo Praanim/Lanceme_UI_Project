@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1040526876422",
+    "project_id": "lancemeuiproject",
+    "storage_bucket": "lancemeuiproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040526876422:android:2b1224ca0f7b7c895f8887",
+        "android_client_info": {
+          "package_name": "com.example.lanceme_ui_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040526876422-cnfbagefa6j35afga7utiqq2ktqfbooh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzJaaccb7YFpmz62weyugGq1pkE3rjxTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040526876422-cnfbagefa6j35afga7utiqq2ktqfbooh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
